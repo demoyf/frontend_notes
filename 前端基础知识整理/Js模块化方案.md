@@ -74,5 +74,35 @@ CommonJs是另外一种模块化思路，主要是将单个文件作为一个模
 
 小demo：
 ```
+// 定义一个lib  
+let obj = {
+    foo(){
+        console.log("123");
+    }
+}
 
+module.exports = obj;
+
+// 使用
+let lib = require('../package/lib');
+lib.foo();
 ```
+
+##### 四、Es6新特性
+Es6之后，规范了模块化的使用方式，所以AMD和CMD的模块化方案，实际上后续使用的比例也逐渐下降。ES6的新特性，实际上跟CommonJs大致相同，只是使用方法上有所不同。
+小demo：
+```
+// 定义一个lib
+export default {
+    foo(){
+        console.log("123");
+    }
+}
+
+// 使用
+import lib form '../package/lib';
+lib.foo();
+```
+
+##### 总结
+以上就记录这么多，模块化的优点显而易见，无论是代码的维护，还是减少冗余，模块化都是一个非常好的选择，需要什么功能，直接调用相应的模块。
