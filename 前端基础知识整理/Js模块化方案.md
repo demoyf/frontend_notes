@@ -88,6 +88,11 @@ let lib = require('../package/lib');
 lib.foo();
 ```
 
+exports 和 module.exports：
+
+exports 和 module.exports 用法相似，但是不能对 exports 直接赋值。因为 var exports = module.exports 这句代码表明了 exports 和 module.exports 享有相同地址，通过改变对象的属性值会对两者都起效，但是如果直接对 exports 赋值就会导致两者不再指向同一个内存地址，修改并不会对 module.exports 起效。
+export只是一个辅助工具，他引用的实际上就是module.exports
+
 ##### 四、Es6新特性
 Es6之后，规范了模块化的使用方式，所以AMD和CMD的模块化方案，实际上后续使用的比例也逐渐下降。ES6的新特性，实际上跟CommonJs大致相同，只是使用方法上有所不同。
 小demo：
