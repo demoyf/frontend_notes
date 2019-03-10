@@ -64,4 +64,15 @@ define(function(require,exports,module){
 ```
 
 ##### 三、CommomJs
+CommonJs是另外一种模块化思路，主要是将单个文件作为一个模块，每一个模块具有独立的作用域，在需要使用到这个模块的时候，将它引入，这个思想实际上有点类似于上面所说的SeaJs。CommonJs的初衷是Js有标准模块，可以被更好的管理，实现像JAVA、PHP这些语言一样具备大型应用开发的能力。这个规范一开始应用于Node中，而前端的webpack也支持了CommonJs。
 
+在CommonJs规范中：
+- 一个文件就是一个模块，拥有单独的作用域。
+- 普通方式定义的变量、函数、对象都属于该模块内。
+- 通过require来加载模块。
+- 通过exports和modul.exports来暴露模块中的内容。
+
+小demo：
+```
+
+```
