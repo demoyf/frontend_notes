@@ -93,8 +93,12 @@ exports 和 module.exports：
 exports 和 module.exports 用法相似，但是不能对 exports 直接赋值。因为 var exports = module.exports 这句代码表明了 exports 和 module.exports 享有相同地址，通过改变对象的属性值会对两者都起效，但是如果直接对 exports 赋值就会导致两者不再指向同一个内存地址，修改并不会对 module.exports 起效。
 export只是一个辅助工具，他引用的实际上就是module.exports，而require实际上引入的是module.exports的值。
 
-##### 四、Es6新特性
-Es6之后，规范了模块化的使用方式，所以AMD和CMD的模块化方案，实际上后续使用的比例也逐渐下降。ES6的新特性，实际上跟CommonJs大致相同，只是使用方法上有所不同。
+##### 四、Es Module
+Es6之后，规范了模块化的使用方式，所以AMD和CMD的模块化方案，实际上后续使用的比例也逐渐下降。Es Module，跟CommonJs思想上大致一致。不过有以下几点不同。
+= CommonJS 支持动态导入，也就是 require(${path}/xx.js)，后者目前不支持。
+- CommonJS 是同步导入，因为用于服务端，文件都在本地，同步导入即使卡住主线程影响也不大。而后者是异步导入，因为用于浏览器，需要下载文件，如果也采用同步导入会对渲染有很大影响。
+- CommonJS 在导出时都是值拷贝，就算导出的值变了，导入的值也不会改变，所以如果想更新值，必须重新导入一次。但是 ES Module 采用实时绑定的方式，导入导出的值都指向同一个内存地址，所以导入值会跟随导出值变化。
+- ES Module 会编译成 require/exports 来执行的。
 小demo：
 ```
 // 定义一个lib
