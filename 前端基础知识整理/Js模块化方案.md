@@ -113,5 +113,10 @@ import lib form '../package/lib';
 lib.foo();
 ```
 
+export和export default的区别。
+- export可以导出多个，而export default只能导出一个。
+- 使用export导出的，在引用的时候，必须要import {exportName} from './a.js' 的方式导入。
+- export default是指默认输出该对象。
+
 ##### 总结
 以上就记录这么多，模块化的优点显而易见，无论是代码的维护，还是减少冗余，模块化都是一个非常好的选择，需要什么功能，直接调用相应的模块。
